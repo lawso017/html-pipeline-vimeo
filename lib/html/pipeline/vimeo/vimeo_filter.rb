@@ -16,9 +16,9 @@ module HTML
     # This filter does not write additional information to the context.
     class VimeoFilter < TextFilter
       def call
-        regex = /(\s|^)https?:\/\/(www.)?vimeo\.com\/([A-Za-z0-9._%-]*)((\?|#)\S+)?/
+        regex = /https?:\/\/(www.)?vimeo\.com\/([A-Za-z0-9._%-]*)((\?|#)\S+)?/
         @text.gsub(regex) do
-          vimeo_id = $3
+          vimeo_id = $2
           width  = context[:vimeo_width] || 440
           height = context[:vimeo_height] || 248
           show_title      = "title=0"    unless context[:vimeo_show_title]
