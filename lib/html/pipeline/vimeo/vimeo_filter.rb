@@ -29,7 +29,7 @@ module HTML
           query_string_variables = [show_title, show_byline, show_portrait].compact.join("&")
           query_string    = "?" + query_string_variables unless query_string_variables.empty?
 
-          %{<iframe src="//player.vimeo.com/video/#{vimeo_id}#{query_string}" width="#{width}" height="#{height}" frameborder="#{frameborder}"#{allow_fullscreen}></iframe>}
+          %{<iframe data-src="//player.vimeo.com/video/#{vimeo_id}#{query_string}" src="" width="#{width}" height="#{height}" frameborder="#{frameborder}"#{allow_fullscreen}></iframe>}
         end
       end
     end
